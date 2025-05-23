@@ -5,10 +5,17 @@ dotenv.config();
 const bookRoutes = require('./routes/book.routes');
 const cors = require('cors');
 const app = express();
-app.use(cors());
 app.use(express.json());
 
 connectDB()
+
+const corsOptions = {
+    origin: ['http://localhost:3000'], 
+    credentials: true, 
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+    allowedHeaders: ['Content-Type', 'Authorization'], 
+};
+app.use(cors(corsOptions)); 
 
 const PORT = process.env.PORT || 3000;
 
