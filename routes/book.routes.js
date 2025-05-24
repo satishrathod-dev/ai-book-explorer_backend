@@ -19,6 +19,7 @@ router.post('/createBook', async (req, res) => {
     });
 
     const exists = await Book.findOne({ name: name, author: author });
+    console.log("newBook", newBook)
 
     if(exists) {
         return res.status(400).json({ message: "Book already exists" });

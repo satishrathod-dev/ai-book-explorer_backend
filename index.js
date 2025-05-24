@@ -6,6 +6,7 @@ const bookRoutes = require('./routes/book.routes');
 const cors = require('cors');
 const app = express();
 app.use(express.json());
+const userRoutes = require('./routes/user.routes');
 
 connectDB()
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 })
 
 app.use('/api', bookRoutes);
+app.use('/api', userRoutes)
 
 
 app.listen(PORT, () => {
