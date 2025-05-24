@@ -11,7 +11,7 @@ const userRoutes = require('./routes/user.routes');
 connectDB()
 
 const corsOptions = {
-    origin: ['http://localhost:3000', 'https://ai-book-explorer-frontend.vercel.app/'],
+    origin: ['http://localhost:3000', 'https://ai-book-explorer-frontend.vercel.app'],
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
